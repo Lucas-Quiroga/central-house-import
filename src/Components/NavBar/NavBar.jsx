@@ -11,7 +11,7 @@ function NavScrollExample() {
     <Navbar bg="primary" variant="dark" expand="lg">
       <Container fluid>
         <Navbar.Brand href="#" id="titleNav">
-          Central House Import
+          Central House Import™
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -22,8 +22,8 @@ function NavScrollExample() {
             id="nav-links"
           >
             <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
+            <Nav.Link href="#action2">About</Nav.Link>
+            <NavDropdown title="Products" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
                 Another action
@@ -33,9 +33,7 @@ function NavScrollExample() {
                 Something else here
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link>
+            <Nav.Link href="#">Contact</Nav.Link>
           </Nav>
 
           <Form className="d-flex">
