@@ -1,11 +1,12 @@
 import NavScrollExample from "./Components/NavBar/NavBar";
+import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <>
       <NavScrollExample />
-      <h2 className="d-flex d-flex align-self-center">New company incoming</h2>
+      <ItemListContainer greeting={"Está es mi tienda online"} />
     </>
   );
 }

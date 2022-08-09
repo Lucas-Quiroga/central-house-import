@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import CartWidget from "../CartWidget/CartWidget";
 import "./NavBar.css";
 
 function NavScrollExample() {
@@ -34,6 +35,9 @@ function NavScrollExample() {
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="#">Contact</Nav.Link>
+            <Navbar.Brand>
+              <CartWidget />
+            </Navbar.Brand>
           </Nav>
 
           <Form className="d-flex">

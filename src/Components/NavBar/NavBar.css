@@ -5,3 +5,8 @@
 #nav-links{
     margin: 0 auto;
 }
+
+.CartWidgetIcon{
+    color: red;
+    background-color: red;
+}
