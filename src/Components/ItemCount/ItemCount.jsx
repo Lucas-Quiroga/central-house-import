@@ -5,24 +5,22 @@ export default function ItemCount({ stock, intial, onAdd }) {
   const [cant, setCant] = useState(intial);
   stock = 2;
 
-  const sum = () => {
-    return setCant(cant + 1);
+  const handdleValue = (assignment) => {
+    const result = cant + assignment;
+    if (result <= stock && result >= 1) {
+      setCant(cant + assignment);
+    } else {
+      alert("you can't add/remove more products");
+    }
   };
 
-  const rest = () => {
-    return setCant(cant - 1);
-  };
-
-  if (cant > stock) {
-    alert("no puedas agregar estos productos");
-  }
   return (
     <div>
       <div className="contenedor">
         <h2>stock disponible: {stock}</h2>
-        <button onClick={rest}>-</button>
+        <button onClick={() => handdleValue(-1)}>-</button>
         <span>{cant}</span>
-        <button onClick={sum}>+</button>
+        <button onClick={() => handdleValue(+1)}>+</button>
         <button>agregar al carrito</button>
       </div>
     </div>
