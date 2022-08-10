@@ -5,6 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import CartWidget from "../CartWidget/CartWidget";
+import logo from "../../Assets/logo.png";
 import "./NavBar.css";
 
 function NavScrollExample() {
@@ -12,6 +13,7 @@ function NavScrollExample() {
     <Navbar bg="primary" variant="dark" expand="lg">
       <Container fluid>
         <Navbar.Brand href="#" id="titleNav">
+          <img src={logo} alt="logo" className="logoNav" />
           Central House Import™
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />

@@ -10,3 +10,8 @@
     color: red;
     background-color: red;
 }
+
+.logoNav{
+    position: inherit;
+    width: 4em;
+}
