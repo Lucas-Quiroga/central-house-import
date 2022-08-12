@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
-import logo from "../../Assets/logo.png";
+import fume1 from "../../Assets/fume vape/fume1.jpg";
+import fume2 from "../../Assets/fume vape/fume2.jpg";
+import fume3 from "../../Assets/fume vape/fume3.jpg";
+import "./Caroulsel.css";
 
 export default function ControlledCarousel() {
   const [index, setIndex] = useState(0);
@@ -13,35 +16,24 @@ export default function ControlledCarousel() {
   return (
     <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={logo}
-          alt="First slide"
-          height={20}
-        />
+        <img className="d-block w-100 vapeimg" src={fume1} alt="First slide" />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3 className="h3color">First slide label</h3>
+          <p className="h3color">
+            Nulla vitae elit libero, a pharetra augue mollis interdum.
+          </p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=Second slide&bg=282c34"
-          alt="Second slide"
-        />
+        <img className="d-block w-100 vapeimg" src={fume2} alt="Second slide" />
 
         <Carousel.Caption>
-          <h3>Second slide label</h3>
+          <h3 className="h3color">Second slide label</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=Third slide&bg=20232a"
-          alt="Third slide"
-        />
+        <img className="d-block w-100 vapeimg" src={fume3} alt="Third slide" />
 
         <Carousel.Caption>
           <h3>Third slide label</h3>
