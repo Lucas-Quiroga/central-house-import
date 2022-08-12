@@ -8,7 +8,7 @@ function App() {
     <>
       <NavScrollExample />
       <Carouselcomponent />
-      {/* <ItemListContainer greeting={"Está es mi tienda online"} /> */}
+      <ItemListContainer greeting={"Está es mi tienda online"} />
     </>
   );
 }
