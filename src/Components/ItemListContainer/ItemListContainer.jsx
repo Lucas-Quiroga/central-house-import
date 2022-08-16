@@ -20,7 +20,18 @@ export default function ItemListContainer({ greeting }) {
   //   data1.map((e) => setData(e));
   //   console.log(data);
   // };
-
+  useEffect(() => {
+    fetch(fakeArray, {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then((resp) => resp.json())
+      .then((dataa) => {
+        console.log(dataa);
+      });
+  }, []);
   // useEffect(() => {
   //   fakeArrayPromises().then((resolve) => {
   //     setData(resolve);
@@ -28,29 +39,29 @@ export default function ItemListContainer({ greeting }) {
   //   });
   // }, []);
 
-  const promiseClothes = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(fakeArray);
-    }, 2000);
-  });
+  // const promiseClothes = new Promise((resolve, reject) => {
+  //   setTimeout(() => {
+  //     resolve(fakeArray);
+  //   }, 2000);
+  // });
 
-  useEffect(() => {
-    promiseClothes.then((resolve) => {
-      setData(resolve);
-    });
-  }, []);
+  // useEffect(() => {
+  //   promiseClothes.then((resolve) => {
+  //     setData(resolve);
+  //   });
+  // }, []);
 
   return (
     <div>
       <h1>{greeting}</h1>
       <ItemCount />
 
-      {data.map((e) => (
+      {/* {data.map((e) => (
         <>
           <li>{e.title}</li>
           <li>{e.id}</li>
         </>
-      ))}
+      ))} */}
     </div>
   );
 }
