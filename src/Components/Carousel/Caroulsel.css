@@ -8,3 +8,9 @@
 .vapeimg{
     max-width: 50em;
 }
+
+.caro12{
+    max-width: 40%;
+    justify-content: center;
+    margin: 0 auto;
+}

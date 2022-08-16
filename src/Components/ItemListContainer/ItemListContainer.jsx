@@ -5,18 +5,39 @@ import fume2 from "./../../Assets/fume vape/fume2.jpg";
 import fume3 from "./../../Assets/fume vape/fume3.jpg";
 
 const fakeArray = [
-  { id: 1, title: "blue razz", price: 20, pictureUtl: { fume1 } },
-  { id: 2, title: "purple rain", price: 40, pictureUtl: { fume2 } },
-  { id: 3, title: "melon ice", price: 50, pictureUtl: { fume3 } },
+  { id: 1, title: "blue razz", price: 20 },
+  { id: 2, title: "purple rain", price: 40 },
+  { id: 3, title: "melon ice", price: 50 },
 ];
 
 export default function ItemListContainer({ greeting }) {
   const [data, setData] = useState([]);
 
+  // const fakeArrayPromises = async () => {
+  //   const resp = await fetch(fakeArray);
+  //   const data1 = await resp.json();
+
+  //   data1.map((e) => setData(e));
+  //   console.log(data);
+  // };
+
+  // useEffect(() => {
+  //   fakeArrayPromises().then((resolve) => {
+  //     setData(resolve);
+  //     console.log(data);
+  //   });
+  // }, []);
+
+  const promiseClothes = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(fakeArray);
+    }, 2000);
+  });
+
   useEffect(() => {
-    fetch(fakeArray)
-      .then((res) => res.json())
-      .then((datA) => setData(datA));
+    promiseClothes.then((resolve) => {
+      setData(resolve);
+    });
   }, []);
 
   return (
