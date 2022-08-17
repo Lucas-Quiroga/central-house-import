@@ -1,0 +1,17 @@
+#titleNav{
+    font-size: 2em;
+}
+
+#nav-links{
+    margin: 0 auto;
+}
+
+.CartWidgetIcon{
+    color: red;
+    background-color: red;
+}
+
+.logoNav{
+    position: inherit;
+    width: 4em;
+}
