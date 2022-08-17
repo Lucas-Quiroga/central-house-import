@@ -3,65 +3,37 @@ import ItemCount from "../ItemCount/ItemCount";
 import fume1 from "./../../Assets/fume vape/fume1.jpg";
 import fume2 from "./../../Assets/fume vape/fume2.jpg";
 import fume3 from "./../../Assets/fume vape/fume3.jpg";
-
-const fakeArray = [
-  { id: 1, title: "blue razz", price: 20 },
-  { id: 2, title: "purple rain", price: 40 },
-  { id: 3, title: "melon ice", price: 50 },
-];
+import fakeArray from "./mook.json";
 
 export default function ItemListContainer({ greeting }) {
   const [data, setData] = useState([]);
 
-  // const fakeArrayPromises = async () => {
-  //   const resp = await fetch(fakeArray);
-  //   const data1 = await resp.json();
+  const products = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (resolve(fakeArray)) {
+        console.log("se resolvio bien");
+      } else {
+        reject("error: " + reject);
+      }
+    }, 2000);
+  });
 
-  //   data1.map((e) => setData(e));
-  //   console.log(data);
-  // };
   useEffect(() => {
-    fetch(fakeArray, {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
-      .then((resp) => resp.json())
-      .then((dataa) => {
-        console.log(dataa);
-      });
+    products.then((response) => {
+      setData(response);
+    });
   }, []);
-  // useEffect(() => {
-  //   fakeArrayPromises().then((resolve) => {
-  //     setData(resolve);
-  //     console.log(data);
-  //   });
-  // }, []);
-
-  // const promiseClothes = new Promise((resolve, reject) => {
-  //   setTimeout(() => {
-  //     resolve(fakeArray);
-  //   }, 2000);
-  // });
-
-  // useEffect(() => {
-  //   promiseClothes.then((resolve) => {
-  //     setData(resolve);
-  //   });
-  // }, []);
 
   return (
     <div>
       <h1>{greeting}</h1>
       <ItemCount />
 
-      {/* {data.map((e) => (
-        <>
-          <li>{e.title}</li>
-          <li>{e.id}</li>
-        </>
-      ))} */}
+      {data.map((e, i) => (
+        <div key={e.id}>
+          <li key={i}>{e.title}</li>
+        </div>
+      ))}
     </div>
   );
 }
