@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 
 export default function Item({ obj }) {
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card style={{ width: "18rem" }} className="d-flex">
       <Card.Img variant="top" src={obj.photo} />
       <Card.Body>
         <Card.Title>{obj.title}</Card.Title>

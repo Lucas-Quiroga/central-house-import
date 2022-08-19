@@ -1,5 +1,5 @@
  [
-    { "id": 1, "title": "blue razz", "price": 20 , "photo": "../../Assets/fume vape/fume1.jpg" },
+    { "id": 1, "title": "blue razz", "price": 20 , "photo": "./fume vape/fume1.jpg" },
     { "id": 2, "title": "purple rain", "price": 40 },
     { "id": 3, "title": "melon ice", "price": 50 }
   ]
