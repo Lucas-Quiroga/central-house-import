@@ -3,7 +3,13 @@ import React, { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail/ItemDetail";
 
 const fake = [
-  { id: 1, title: "blue razz", price: 20, photo: "./fume vape/fume1.jpg" },
+  {
+    id: 1,
+    title: "blue razz",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni explicabo ex quasi necessitatibus a. Veniam dolorum animi temporibus in voluptates.",
+    price: 20,
+    photo: "./fume vape/fume1.jpg",
+  },
 ];
 
 export default function ItemDetailContainer() {
