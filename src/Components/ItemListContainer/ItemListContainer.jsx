@@ -19,6 +19,7 @@ export default function ItemListContainer({ greeting }) {
         }
       }, 2000);
     });
+
     products.then((response) => {
       setData(response);
     });
