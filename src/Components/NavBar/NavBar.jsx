@@ -6,6 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import CartWidget from "../CartWidget/CartWidget";
 import logo from "../../Assets/logo.png";
+import { Link, NavLink } from "react-router-dom";
 import "./NavBar.css";
 
 function NavScrollExample() {
@@ -24,8 +25,14 @@ function NavScrollExample() {
             navbarScroll
             id="nav-links"
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">About</Nav.Link>
+            <NavLink to={"/"} href="#action1" style={{ color: "white" }}>
+              Home
+            </NavLink>
+
+            {/* <Link to={"/category/vape"}>
+              <Nav.Link href="#action2">Stock</Nav.Link>
+            </Link> */}
+
             <NavDropdown title="Products" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
