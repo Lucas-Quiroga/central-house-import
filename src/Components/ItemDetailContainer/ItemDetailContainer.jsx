@@ -1,16 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import fakeArray from "./../ItemListContainer/mook.json";
 import ItemDetail from "./ItemDetail/ItemDetail";
-
-const fake = [
-  {
-    id: 1,
-    title: "blue razz",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni explicabo ex quasi necessitatibus a. Veniam dolorum animi temporibus in voluptates.",
-    price: 20,
-    photo: "./fume vape/fume1.jpg",
-  },
-];
+import fakeArray from "./../ItemListContainer/mook.json";
 
 export default function ItemDetailContainer() {
   const [data, setData] = useState([]);
@@ -18,7 +9,7 @@ export default function ItemDetailContainer() {
   useEffect(() => {
     const getItem = new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(fake);
+        resolve(fakeArray);
       }, 2000);
     });
 

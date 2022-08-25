@@ -27,22 +27,25 @@ function NavScrollExample() {
           >
             <NavLink to={"/"} href="#action1" style={{ color: "white" }}>
               Home
+              <NavLink to={"/category/vape"}>
+                <Nav.Link href="#action2">Stock</Nav.Link>
+              </NavLink>
+              <NavLink
+                to={"/"}
+                href="#action1"
+                style={{ color: "white" }}
+              ></NavLink>
+              <NavDropdown title="Products" id="navbarScrollingDropdown">
+                <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action4">
+                  Another action
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action5">
+                  Something else here
+                </NavDropdown.Item>
+              </NavDropdown>
             </NavLink>
-
-            {/* <Link to={"/category/vape"}>
-              <Nav.Link href="#action2">Stock</Nav.Link>
-            </Link> */}
-
-            <NavDropdown title="Products" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown>
             <Nav.Link href="#">Contact</Nav.Link>
             <Navbar.Brand>
               <CartWidget />
