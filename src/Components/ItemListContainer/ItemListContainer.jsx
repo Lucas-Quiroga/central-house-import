@@ -9,26 +9,30 @@ export default function ItemListContainer({ greeting }) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const param = useParams();
-  console.log(param.categoryId);
+  const { categoryId } = useParams();
+
+  // useEffect(() => {
+
+  // }, [])
+
+  //separar la promesa - cart view - 42:34
 
   useEffect(() => {
     setLoading(true);
     const products = new Promise((resolve, reject) => {
       setTimeout(() => {
         setLoading(false);
-        if (resolve(fakeArray)) {
-          console.log("se resolvio bien");
-        } else {
-          reject("error: " + reject);
-        }
+        resolve(products);
       }, 2000);
     });
-
-    products.then((response) => {
-      setData(response);
-    });
-  }, []);
+    categoryId
+      ? products.then((response) =>
+          setData(response.filter((prod) => prod.category === categoryId))
+        )
+      : products.then((resolve) => {
+          setData(resolve);
+        });
+  }, [categoryId]);
 
   return (
     <div>
