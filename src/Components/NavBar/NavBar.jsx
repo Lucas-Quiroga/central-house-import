@@ -3,10 +3,9 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import CartWidget from "../CartWidget/CartWidget";
 import logo from "../../Assets/logo.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 
 function NavScrollExample() {
@@ -25,38 +24,30 @@ function NavScrollExample() {
             navbarScroll
             id="nav-links"
           >
-            <NavLink to={"/"} href="#action1" style={{ color: "white" }}>
+            <Nav.Link
+              as={Link}
+              to={"/"}
+              href="#action1"
+              style={{ color: "white" }}
+            >
               Home
-              <NavLink to={"/category/stock"}>
-                <Nav.Link href="#action2">Stock</Nav.Link>
-              </NavLink>
-              <NavLink
-                to={"/"}
-                href="#action1"
-                style={{ color: "white" }}
-              ></NavLink>
-              <NavLink to={"/category/stock"}>
-                <NavDropdown title="Products" id="navbarScrollingDropdown">
-                  <NavLink to={"/category/vapes"}>
-                    <NavDropdown.Item href="#action3">
-                      OtrosVapes
-                    </NavDropdown.Item>
-                  </NavLink>
-                  <NavLink to={"/category/Celulares"}>
-                    <NavDropdown.Item href="#action4">
-                      Celulares
-                    </NavDropdown.Item>
-                  </NavLink>
-                  <NavDropdown.Divider />
-                  <NavLink to={"/category/Sobre Nosotros"}>
-                    <NavDropdown.Item href="#action5">
-                      Sobre Nosotros
-                    </NavDropdown.Item>
-                  </NavLink>
-                </NavDropdown>
-              </NavLink>
-            </NavLink>
-            <Nav.Link href="#">Contact</Nav.Link>
+            </Nav.Link>
+
+            <Nav.Link as={Link} to={"/category/stock"}>
+              Stock
+            </Nav.Link>
+
+            <Nav.Link as={Link} to={"/category/vapes"}>
+              OtrosVapes
+            </Nav.Link>
+
+            <Nav.Link as={Link} to={"/category/Celulares"}>
+              Celulares
+            </Nav.Link>
+            <Nav.Link as={Link} to={"/category/Sobre Nosotros"}>
+              Sobre Nosotros
+            </Nav.Link>
+
             <Navbar.Brand>
               <CartWidget />
             </Navbar.Brand>

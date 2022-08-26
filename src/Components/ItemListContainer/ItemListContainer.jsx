@@ -22,7 +22,7 @@ export default function ItemListContainer({ greeting }) {
     const products = new Promise((resolve, reject) => {
       setTimeout(() => {
         setLoading(false);
-        resolve(products);
+        resolve(fakeArray);
       }, 2000);
     });
     categoryId
